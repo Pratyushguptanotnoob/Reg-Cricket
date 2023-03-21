@@ -1,0 +1,18 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+#reading csv file
+df=pd.read_csv(r'C:\Users\91800\Downloads\IPL 2022 Batters.csv')
+#plot between Runs and 4s
+df['Runs'] = df['Runs'].fillna(df['Runs'].mean())
+df['4s'] = df['4s'].fillna(df['4s'].mean())
+
+plt.plot(df['Runs'], df['4s'])
+plt.show()
+#plot between Strike rate and 4s
+df['SR'] = df['SR'].fillna(df['SR'].mean())
+df['4s'] = df['4s'].fillna(df['4s'].mean())
+
+plt.plot(df['SR'], df['4s'])
+plt.show()
